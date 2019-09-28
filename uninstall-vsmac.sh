@@ -11,6 +11,7 @@ rm -rf ~/Library/Logs/VisualStudio
 rm -rf ~/Library/VisualStudio
 rm -rf ~/Library/*Xamarin* 
 rm -rf ~/Library/Preferences/Xamarin/
+#rm -rf ~/Library/Preferences/*xamarin*
 rm -rf ~/Library/Application\ Support/VisualStudio
 rm -rf ~/Library/Application\ Support/VisualStudio/7.0/LocalInstall/Addins/
 
@@ -31,7 +32,7 @@ sudo rm -rf /Library/Frameworks/Xamarin.iOS.framework
 sudo rm -rf /Developer/MonoTouch
 sudo pkgutil --forget com.xamarin.monotouch.pkg
 sudo pkgutil --forget com.xamarin.xamarin-ios-build-host.pkg
-
+#sudo rm -rf /Library/Frameworks/Mono.framework
 
 # Uninstall Xamarin.Mac
 echo "Uninstalling Xamarin.Mac..."
