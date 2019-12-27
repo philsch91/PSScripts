@@ -1,11 +1,16 @@
 #!/bin/bash
 
-if ["$1" == ""]; then
+if [ "$#" -ne 2 ]; then
+    echo "Usage: $(basename $0) groupId artifactId"
+    exit 1
+fi
+
+if [ "$1" == "" ]; then
     echo "please provide a groupId (package name)"
     exit 1
 fi
 
-if ["$2" == ""]; then
+if [ "$2" == "" ]; then
     echo "please provie a artifactId (project name)"
     exit 1
 fi
