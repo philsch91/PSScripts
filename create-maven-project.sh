@@ -6,12 +6,12 @@ if [ "$#" -ne 2 ]; then
 fi
 
 if [ "$1" == "" ]; then
-    echo "please provide a groupId (package name)"
+    echo "please provide a groupId (package name, e.g. com.organization.project)"
     exit 1
 fi
 
 if [ "$2" == "" ]; then
-    echo "please provie a artifactId (project name)"
+    echo "please provie a artifactId (project name, e.g. Project1)"
     exit 1
 fi
 
@@ -27,7 +27,11 @@ readonly archetypeArtifactId="maven-archetype-quickstart"
 readonly archetypeVersion="1.4"
 readonly interactiveMode="false"
 
-mvn archetype:"${archeType}" -DgroupId="${groupdId}" -DartifactId="${artifactId}" -DarchetypeArtifactId="${archetypeArtifactId}" -DarchetypeVersion="${archetypeVersion}" -DinteractiveMode="${interactiveMode}"
+#mvn archetype:"${archeType}" -DgroupId="${groupId}" -DartifactId="${artifactId}" -DarchetypeArtifactId="${archetypeArtifactId}" -DarchetypeVersion="${archetypeVersion}" -DinteractiveMode="${interactiveMode}"
+
+cmd="mvn archetype:${archeType} -DgroupId=${groupId} -DartifactId=${artifactId} -DarchetypeArtifactId=${archetypeArtifactId} -DarchetypeVersion=${archetypeVersion} -DinteractiveMode=${interactiveMode}"
+
+$cmd
 
 rc=$?
 
